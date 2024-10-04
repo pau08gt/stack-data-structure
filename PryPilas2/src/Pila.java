@@ -34,7 +34,7 @@ public class Pila {
     @Override
     public String toString() {
         String resultado="";
-        for(int i=pila.size()-1; i>=0; i++)
+        for(int i=pila.size()-1; i>=0; i--)
         {
             resultado+=pila.get(i).toString()+"\n\t";
         }

@@ -12,9 +12,12 @@ public class Ventana extends JPanel {
     private JTextArea textUltimo;
     private JButton butUltimoPub;
     private JButton borrarButton;
+    private JButton bntListar;
+    private JButton button1;
     private Pila blog=new Pila();
 
     public Ventana(){
+
         publicarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,6 +60,19 @@ public class Ventana extends JPanel {
                 }
             }
         });
+
+        bntListar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    textUltimo.setText(blog.toString());
+                }
+                catch (Exception ex)
+                {
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -67,5 +83,9 @@ public class Ventana extends JPanel {
         frame.setVisible(true);
         Dimension minTam= new Dimension(300,600);
         frame.setMinimumSize(minTam);
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }
